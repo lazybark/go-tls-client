@@ -22,7 +22,6 @@ func (c *Client) ReadWithContext() ([]byte, int, error) {
 	}
 	//Length of current read
 	read := 0
-	defer c.addRecBytes(read)
 	//Read buffer with defined size
 	b := make([]byte, c.conf.BufferSize)
 	for {
@@ -43,6 +42,7 @@ func (c *Client) ReadWithContext() ([]byte, int, error) {
 				return nil, read, fmt.Errorf("[ReadWithContext] reading error: %w", err)
 			}
 			read += n
+			c.addRecBytes(n)
 			//We check every byte searching for terminator
 			for num, by := range b[:n] {
 				if by == c.conf.MessageTerminator {
