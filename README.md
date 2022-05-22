@@ -58,7 +58,7 @@ fmt.Println(c.SentBytes())
 ## Config parameters
 
 * SuppressErrors - set true to avoid errors being sent into ErrChan
-* MaxMessageSize - max length of an incoming message in bytes. In case it's reached, client will break the connecton and send error. Also, you may want to consider using maximal message size for you own messages that you send via client. [TLS could be tricky](https://hpbn.co/transport-layer-security-tls/#optimize-tls-record-size).
+* MaxMessageSize - max length of an incoming message in bytes. In case it's reached, client will break the connecton and send error. Also, you may want to consider using maximal message size for your own messages that you send via client. [TLS could be tricky](https://hpbn.co/transport-layer-security-tls/#optimize-tls-record-size).
 * MessageTerminator - a byte that signals end of message in TLS stream.
 * BufferSize - number of bytes that message reciever can process at once. Depends on purposes of your project.
 * DropOldStats - set true if you want to set all client stats to 0 after new connection is made. By default client will compile stats of all connections it has made.
