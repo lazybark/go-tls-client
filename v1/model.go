@@ -5,7 +5,7 @@ import (
 	"crypto/tls"
 )
 
-var ver = "1.0.0"
+var ver = "1.0.1"
 
 type Client struct {
 	//conn is the connection that will be used to read and write bytes
@@ -122,4 +122,24 @@ func (c *Client) close(err bool) error {
 //addRecBytes adds number to count of total recieved bytes
 func (c *Client) addRecBytes(n int) {
 	c.br += n
+}
+
+//Stats returns cleint stats
+func (c *Client) Stats() (int, int, int) {
+	return c.bs, c.br, c.errors
+}
+
+//Stats returns cleint stats
+func (c *Client) ErrorsCount() int {
+	return c.errors
+}
+
+//Stats returns cleint stats
+func (c *Client) RecievedBytes() int {
+	return c.br
+}
+
+//Stats returns cleint stats
+func (c *Client) SentBytes() int {
+	return c.bs
 }
