@@ -105,9 +105,7 @@ func New(conf *Config) *Client {
 }
 
 //Version returns app version
-func (c *Client) Version() string {
-	return ver
-}
+func (c *Client) Version() string { return ver }
 
 //close closes connection and sets internal client vars to stop values
 func (c *Client) close(err bool) error {
@@ -120,26 +118,16 @@ func (c *Client) close(err bool) error {
 }
 
 //addRecBytes adds number to count of total recieved bytes
-func (c *Client) addRecBytes(n int) {
-	c.br += n
-}
+func (c *Client) addRecBytes(n int) { c.br += n }
 
 //Stats returns cleint stats
-func (c *Client) Stats() (int, int, int) {
-	return c.bs, c.br, c.errors
-}
+func (c *Client) Stats() (int, int, int) { return c.bs, c.br, c.errors }
 
 //Stats returns cleint stats
-func (c *Client) ErrorsCount() int {
-	return c.errors
-}
+func (c *Client) ErrorsCount() int { return c.errors }
 
 //Stats returns cleint stats
-func (c *Client) RecievedBytes() int {
-	return c.br
-}
+func (c *Client) RecievedBytes() int { return c.br }
 
 //Stats returns cleint stats
-func (c *Client) SentBytes() int {
-	return c.bs
-}
+func (c *Client) SentBytes() int { return c.bs }

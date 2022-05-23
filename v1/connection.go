@@ -77,6 +77,4 @@ func (c *Client) SendByte(b []byte) error {
 }
 
 //SendString converts s into byte slice and calls to SendByte
-func (c *Client) SendString(s string) error {
-	return c.SendByte([]byte(s))
-}
+func (c *Client) SendString(s string) error { return c.SendByte([]byte(s)) }

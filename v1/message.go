@@ -7,11 +7,7 @@ type Message struct {
 }
 
 //Bytes returns message bytes
-func (m *Message) Bytes() []byte {
-	return m.bytes
-}
+func (m *Message) Bytes() []byte { return m.bytes }
 
 //Length returns message bytes length
-func (m *Message) Length() int {
-	return m.length
-}
+func (m *Message) Length() int { return m.length }
